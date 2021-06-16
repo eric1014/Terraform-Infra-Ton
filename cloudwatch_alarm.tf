@@ -16,8 +16,8 @@ resource "aws_cloudwatch_metric_alarm" "bat" {
   threshold           = "40"
 
   dimensions = {
-      InstanceId = "i-05a87af681563c72e"
-    }
+    InstanceId = join("", aws_instance.default.*.id)
+  }
 	
   alarm_description = "This metric monitors ec2 cpu utilization"
   alarm_actions     = ["${var.actionitem}"]
