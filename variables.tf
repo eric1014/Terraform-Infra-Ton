@@ -33,3 +33,8 @@ variable "allowed_cidr_blocks" {
   type        = list(string)
   default     = ["0.0.0.0/0"]
 }
+
+variable "count_instances" {
+  description = "Number of instances"
+  default     = "1"
+}
