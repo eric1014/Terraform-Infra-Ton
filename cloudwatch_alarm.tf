@@ -14,6 +14,7 @@ resource "aws_cloudwatch_metric_alarm" "bat" {
   period              = "60"
   statistic           = "Average"
   threshold           = "40"
+  InstanceId          = aws_instance.apache_webserver.id
 
   dimensions = {
     InstanceId = join("", aws_instance.default.*.id)
